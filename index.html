@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<title>Amazon Picks | IVY SHINY DAYS</title>
+<meta name="description" content="미국 생활하며 발견한, 직접 써보고 고른 Amazon 추천 아이템. Curated Amazon finds for a brighter everyday.">
+
+<!-- Replace YOUR-PAGES-URL below with the final GitHub Pages address after publishing. -->
+<meta property="og:type" content="website">
+<meta property="og:title" content="Amazon Picks | IVY SHINY DAYS">
+<meta property="og:description" content="미국 생활하며 발견한 추천 아이템 · Curated finds for a brighter everyday.">
+<meta property="og:image" content="https://ivyshinydays.github.io/ivy-amazon-picks/og-image.jpg">
+<meta property="og:url" content="https://ivyshinydays.github.io/ivy-amazon-picks/">
+<meta name="twitter:card" content="summary_large_image">
+<meta name="twitter:title" content="Amazon Picks | IVY SHINY DAYS">
+<meta name="twitter:description" content="미국 생활하며 발견한 추천 아이템 · Curated finds for a brighter everyday.">
+<meta name="twitter:image" content="https://ivyshinydays.github.io/ivy-amazon-picks/og-image.jpg">
+
+<link rel="icon" href="./favicon.png">
+<link rel="apple-touch-icon" sizes="180x180" href="./apple-touch-icon.png">
+<link rel="manifest" href="./manifest.webmanifest">
+<meta name="theme-color" content="#FDF7EE">
+<style>
+:root{--navy:#232f3e;--orange:#ff9900;--ivory:#fdf7ee;--soft:#e9eef3;--ink:#192535}
+*{box-sizing:border-box}
+html,body{margin:0;background:#f8f4ee;color:var(--ink);font-family:-apple-system,BlinkMacSystemFont,"Segoe UI","Noto Sans KR",Arial,sans-serif}
+body{min-height:100vh}
+.page{position:relative;width:min(100%,720px);margin:auto;background:#fff;box-shadow:0 12px 42px rgba(35,47,62,.09)}
+.design{display:block;width:100%;height:auto}
+.hotspot{position:absolute;z-index:2;border:0;background:transparent;cursor:pointer}
+.good{left:4.5%;top:39.1%;width:30%;height:19.0%}
+.save{left:35.5%;top:39.1%;width:29%;height:19.0%}
+.shop{left:65.5%;top:39.1%;width:30%;height:19.0%}
+.modal{position:fixed;inset:0;z-index:20;background:rgba(18,27,38,.42);display:none;align-items:flex-end;justify-content:center;padding:16px}
+.modal.open{display:flex}
+.sheet{width:min(100%,620px);max-height:88vh;overflow:auto;background:#fffdf9;border-radius:28px;padding:25px 22px 22px;box-shadow:0 18px 60px rgba(0,0,0,.2)}
+.sheet-head{display:flex;align-items:flex-start;justify-content:space-between;gap:14px}
+.eyebrow{margin:0 0 5px;letter-spacing:.22em;font-size:11px;color:#718092;font-weight:800}
+h2{margin:0;font-family:Georgia,"Times New Roman",serif;color:var(--navy);font-size:29px;line-height:1.15}
+.close{border:0;background:var(--soft);color:var(--navy);border-radius:50%;width:38px;height:38px;font-size:25px;cursor:pointer}
+.desc{font-size:15px;line-height:1.75;color:#56616d;margin:17px 0}
+.ko,.en{display:block}
+.en{margin-top:4px;color:#7a8490;font-size:.91em}
+.benefits,.steps{display:grid;gap:10px}
+.benefit,.step{background:#f8f5ef;border:1px solid #eee5d8;border-radius:18px;padding:15px 16px;line-height:1.55}
+.benefit b,.step b{display:block;color:var(--navy);margin-bottom:6px}
+.tabs{display:flex;gap:8px;margin:16px 0}
+.tab{flex:1;border:1px solid #d8e0e7;background:#fff;border-radius:13px;padding:12px;font-weight:800;color:var(--navy)}
+.tab.active{background:var(--navy);color:#fff}
+.steps{display:none}.steps.active{display:grid}
+.primary{display:block;width:100%;border:0;border-radius:16px;background:var(--navy);color:#fff;text-align:center;text-decoration:none;padding:14px 18px;font-size:16px;font-weight:800;margin-top:17px;cursor:pointer;line-height:1.35}
+.primary .en{color:#dfe6ec;font-size:12px;margin-top:3px}
+.note{font-size:12px;line-height:1.55;color:#8a7569;margin:12px 2px 0;text-align:center}
+@media(max-width:600px){.page{box-shadow:none}.sheet{border-radius:24px;padding:22px 18px}h2{font-size:26px}}
+</style>
+</head>
+<body>
+<main class="page" aria-label="IVY SHINY DAYS Amazon Picks">
+  <img class="design" src="./amazon-design.jpg" alt="IVY SHINY DAYS Amazon Picks">
+  <button class="hotspot good" aria-label="홈 화면에 저장하면 좋은 점 / Why save it to your Home Screen?" data-modal="why"></button>
+  <button class="hotspot save" aria-label="바로가기 저장하는 법 / How to save the shortcut" data-modal="how"></button>
+  <a class="hotspot shop amazon-link" aria-label="설치 없이 바로 Amazon 추천 상품 구경하기 / Browse Amazon Picks without installing"></a>
+</main>
+
+<div class="modal" id="why" role="dialog" aria-modal="true">
+ <div class="sheet">
+  <div class="sheet-head"><div><p class="eyebrow">IVY SHINY DAYS</p><h2><span class="ko">홈 화면에 저장하면 좋은 점 ♡</span><span class="en">Why save it to your Home Screen?</span></h2></div><button class="close" aria-label="닫기 / Close">×</button></div>
+  <p class="desc"><span class="ko">한 번만 저장해두면 매번 링크를 다시 찾지 않아도, 앱처럼 한 번에 Ivy의 Amazon Picks로 들어올 수 있어요.</span><span class="en">Save it once, and you can open Ivy’s Amazon Picks from your Home Screen anytime—just like an app.</span></p>
+  <div class="benefits">
+   <div class="benefit"><b><span class="ko">⌂ 언제든 한 번에</span><span class="en">Open it in one tap</span></b><span class="ko">홈 화면에서 바로 열 수 있어요.</span><span class="en">Go straight to Amazon Picks from your Home Screen.</span></div>
+   <div class="benefit"><b><span class="ko">◷ 링크를 다시 찾을 필요 없이</span><span class="en">No more searching for the link</span></b><span class="ko">블로그나 메시지를 다시 뒤질 필요가 없어요.</span><span class="en">No need to dig through old messages or blog posts.</span></div>
+   <div class="benefit"><b><span class="ko">♡ 제가 직접 고른 추천템으로</span><span class="en">Come back to my curated picks</span></b><span class="ko">필요할 때 편하게 다시 찾아보세요.</span><span class="en">Revisit the items I’ve personally selected whenever you like.</span></div>
+  </div>
+  <button class="primary" data-switch="how"><span class="ko">바로가기 저장하는 법 보기</span><span class="en">See how to save the shortcut</span></button>
+ </div>
+</div>
+
+<div class="modal" id="how" role="dialog" aria-modal="true">
+ <div class="sheet">
+  <div class="sheet-head"><div><p class="eyebrow">QUICK GUIDE</p><h2><span class="ko">바로가기 저장하는 법 ♡</span><span class="en">How to save Amazon Picks</span></h2></div><button class="close" aria-label="닫기 / Close">×</button></div>
+  <p class="desc"><span class="ko">카카오톡·인스타그램 안에서 열었다면 먼저 Safari 또는 Chrome으로 열어주세요.</span><span class="en">If you opened this page inside KakaoTalk or Instagram, first open it in Safari or Chrome.</span></p>
+  <div class="tabs"><button class="tab active" data-tab="iphone">iPhone</button><button class="tab" data-tab="android">Android</button></div>
+  <div class="steps active" id="iphone">
+   <div class="step"><b><span class="ko">1. Safari로 열기</span><span class="en">Open in Safari</span></b><span class="ko">현재 화면을 Safari에서 열어주세요.</span><span class="en">Open this page in Safari.</span></div>
+   <div class="step"><b><span class="ko">2. 공유 버튼 누르기</span><span class="en">Tap the Share button</span></b><span class="ko">Safari의 공유 버튼(□↑)을 눌러주세요.</span><span class="en">Tap the Share button (□↑) in Safari.</span></div>
+   <div class="step"><b><span class="ko">3. ‘홈 화면에 추가’ 선택</span><span class="en">Choose “Add to Home Screen”</span></b><span class="ko">‘홈 화면에 추가’를 누른 뒤 ‘추가’를 선택하면 완료!</span><span class="en">Tap “Add to Home Screen,” then tap “Add.” You’re all set!</span></div>
+  </div>
+  <div class="steps" id="android">
+   <div class="step"><b><span class="ko">1. Chrome으로 열기</span><span class="en">Open in Chrome</span></b><span class="ko">현재 화면을 Chrome에서 열어주세요.</span><span class="en">Open this page in Chrome.</span></div>
+   <div class="step"><b><span class="ko">2. 브라우저 메뉴 열기</span><span class="en">Open the browser menu</span></b><span class="ko">Chrome의 메뉴(⋮)를 눌러주세요.</span><span class="en">Tap the Chrome menu (⋮).</span></div>
+   <div class="step"><b><span class="ko">3. ‘홈 화면에 추가’ 선택</span><span class="en">Choose “Add to Home screen”</span></b><span class="ko">‘홈 화면에 추가’ 또는 ‘앱 설치’를 선택하면 완료!</span><span class="en">Choose “Add to Home screen” or “Install app” to finish.</span></div>
+  </div>
+  <a class="primary amazon-link"><span class="ko">설치 없이 바로 구경하기</span><span class="en">Browse Amazon Picks now</span></a>
+  <p class="note"><span class="ko">※ 브라우저와 기기에 따라 메뉴 이름이 조금 다를 수 있어요.</span><span class="en">Menu names may vary slightly by browser and device.</span></p>
+ </div>
+</div>
+
+<script>
+// Put the final Amazon Associates / storefront URL here once.
+// Example: const AMAZON_URL = "https://www.amazon.com/shop/...";
+const AMAZON_URL = "https://link.amazon/B03vOqoYp";
+document.querySelectorAll(".amazon-link").forEach(a=>{
+  a.href = AMAZON_URL === "https://link.amazon/B03vOqoYp" ? "#" : AMAZON_URL;
+  a.target="_blank"; a.rel="noopener sponsored";
+  if(AMAZON_URL === "https://link.amazon/B03vOqoYp"){
+    a.addEventListener("click",e=>{e.preventDefault();alert("Amazon 링크를 연결하면 바로 이용할 수 있어요.\nThe Amazon link will be available once it’s connected.");});
+  }
+});
+document.querySelectorAll("[data-modal]").forEach(b=>b.onclick=()=>document.getElementById(b.dataset.modal).classList.add("open"));
+document.querySelectorAll(".close").forEach(b=>b.onclick=()=>b.closest(".modal").classList.remove("open"));
+document.querySelectorAll(".modal").forEach(m=>m.onclick=e=>{if(e.target===m)m.classList.remove("open")});
+document.querySelectorAll("[data-switch]").forEach(b=>b.onclick=()=>{b.closest(".modal").classList.remove("open");document.getElementById(b.dataset.switch).classList.add("open")});
+document.querySelectorAll(".tab").forEach(b=>b.onclick=()=>{
+ document.querySelectorAll(".tab").forEach(x=>x.classList.remove("active"));
+ document.querySelectorAll(".steps").forEach(x=>x.classList.remove("active"));
+ b.classList.add("active");document.getElementById(b.dataset.tab).classList.add("active");
+});
+if("serviceWorker" in navigator) navigator.serviceWorker.register("./sw.js").catch(()=>{});
+</script>
+</body></html>
