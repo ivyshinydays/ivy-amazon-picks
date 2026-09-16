@@ -110,7 +110,7 @@ document.querySelectorAll(".tab").forEach(b=>b.onclick=()=>{
  document.querySelectorAll(".steps").forEach(x=>x.classList.remove("active"));
  b.classList.add("active");document.getElementById(b.dataset.tab).classList.add("active");
 });
-if("serviceWorker" in navigator) </script>
+</script>
 
 <script>
 (function () {
@@ -125,6 +125,16 @@ if("serviceWorker" in navigator) </script>
     });
   }
 })();
+</script>
+
+
+<script>
+if ('serviceWorker' in navigator) {
+  window.addEventListener('load', function () {
+    navigator.serviceWorker.register('./sw.js?v=kill-20260916-1', {updateViaCache:'none'})
+      .then(function(reg){ reg.update(); });
+  });
+}
 </script>
 
 </body></html>

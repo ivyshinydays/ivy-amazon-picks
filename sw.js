@@ -1,1 +1,18 @@
-const CACHE='ivy-amazon-picks-v1';const ASSETS=['./','./index.html','./amazon-design.jpg','./apple-touch-icon.png','./icon-192.png','./icon-512.png','./favicon.png'];self.addEventListener('install',e=>e.waitUntil(caches.open(CACHE).then(c=>c.addAll(ASSETS))));self.addEventListener('fetch',e=>e.respondWith(caches.match(e.request).then(r=>r||fetch(e.request))));
+self.addEventListener('install', event => {
+  self.skipWaiting();
+});
+
+self.addEventListener('activate', event => {
+  event.waitUntil((async () => {
+    const keys = await caches.keys();
+    await Promise.all(keys.map(key => caches.delete(key)));
+    await self.clients.claim();
+    const clients = await self.clients.matchAll({type:'window', includeUncontrolled:true});
+    clients.forEach(client => client.navigate(client.url));
+    await self.registration.unregister();
+  })());
+});
+
+self.addEventListener('fetch', event => {
+  event.respondWith(fetch(event.request, {cache:'no-store'}));
+});
