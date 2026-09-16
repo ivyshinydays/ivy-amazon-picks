@@ -101,11 +101,10 @@ h2{margin:0;font-family:Georgia,"Times New Roman",serif;color:var(--navy);font-s
 // Example: const AMAZON_URL = "https://www.amazon.com/shop/...";
 const AMAZON_URL = "https://link.amazon/B03vOqoYp";
 document.querySelectorAll(".amazon-link").forEach(a=>{
-  a.href = AMAZON_URL === "https://link.amazon/B03vOqoYp" ? "#" : AMAZON_URL;
-  a.target="_blank"; a.rel="noopener sponsored";
-  if(AMAZON_URL === "https://link.amazon/B03vOqoYp"){
-    a.addEventListener("click",e=>{e.preventDefault();alert("Amazon 링크를 연결하면 바로 이용할 수 있어요.\nThe Amazon link will be available once it’s connected.");});
-  }
+  a.href = "https://link.amazon/B03vOqoYp";
+  a.removeAttribute("target");
+  a.rel = "sponsored";
+  a.onclick = null;
 });
 document.querySelectorAll("[data-modal]").forEach(b=>b.onclick=()=>document.getElementById(b.dataset.modal).classList.add("open"));
 document.querySelectorAll(".close").forEach(b=>b.onclick=()=>b.closest(".modal").classList.remove("open"));
