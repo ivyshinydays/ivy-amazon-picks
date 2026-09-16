@@ -60,7 +60,7 @@ h2{margin:0;font-family:Georgia,"Times New Roman",serif;color:var(--navy);font-s
   <img class="design" src="./amazon-design.jpg" alt="IVY SHINY DAYS Amazon Picks">
   <button class="hotspot good" aria-label="홈 화면에 저장하면 좋은 점 / Why save it to your Home Screen?" data-modal="why"></button>
   <button class="hotspot save" aria-label="바로가기 저장하는 법 / How to save the shortcut" data-modal="how"></button>
-  <a class="hotspot shop amazon-link" aria-label="설치 없이 바로 Amazon 추천 상품 구경하기 / Browse Amazon Picks without installing"></a>
+  <a class="hotspot shop amazon-link" aria-label="설치 없이 바로 Amazon 추천 상품 구경하기 / Browse Amazon Picks without installing" href="https://link.amazon/B03vOqoYp"></a>
 </main>
 
 <div class="modal" id="why" role="dialog" aria-modal="true">
@@ -91,7 +91,7 @@ h2{margin:0;font-family:Georgia,"Times New Roman",serif;color:var(--navy);font-s
    <div class="step"><b><span class="ko">2. 브라우저 메뉴 열기</span><span class="en">Open the browser menu</span></b><span class="ko">Chrome의 메뉴(⋮)를 눌러주세요.</span><span class="en">Tap the Chrome menu (⋮).</span></div>
    <div class="step"><b><span class="ko">3. ‘홈 화면에 추가’ 선택</span><span class="en">Choose “Add to Home screen”</span></b><span class="ko">‘홈 화면에 추가’ 또는 ‘앱 설치’를 선택하면 완료!</span><span class="en">Choose “Add to Home screen” or “Install app” to finish.</span></div>
   </div>
-  <a class="primary amazon-link"><span class="ko">설치 없이 바로 구경하기</span><span class="en">Browse Amazon Picks now</span></a>
+  <a class="primary amazon-link" href="https://link.amazon/B03vOqoYp"><span class="ko">설치 없이 바로 구경하기</span><span class="en">Browse Amazon Picks now</span></a>
   <p class="note"><span class="ko">※ 브라우저와 기기에 따라 메뉴 이름이 조금 다를 수 있어요.</span><span class="en">Menu names may vary slightly by browser and device.</span></p>
  </div>
 </div>
@@ -100,12 +100,7 @@ h2{margin:0;font-family:Georgia,"Times New Roman",serif;color:var(--navy);font-s
 // Put the final Amazon Associates / storefront URL here once.
 // Example: const AMAZON_URL = "https://www.amazon.com/shop/...";
 const AMAZON_URL = "https://link.amazon/B03vOqoYp";
-document.querySelectorAll(".amazon-link").forEach(a=>{
-  a.href = "https://link.amazon/B03vOqoYp";
-  a.removeAttribute("target");
-  a.rel = "sponsored";
-  a.onclick = null;
-});
+
 document.querySelectorAll("[data-modal]").forEach(b=>b.onclick=()=>document.getElementById(b.dataset.modal).classList.add("open"));
 document.querySelectorAll(".close").forEach(b=>b.onclick=()=>b.closest(".modal").classList.remove("open"));
 document.querySelectorAll(".modal").forEach(m=>m.onclick=e=>{if(e.target===m)m.classList.remove("open")});
@@ -115,6 +110,21 @@ document.querySelectorAll(".tab").forEach(b=>b.onclick=()=>{
  document.querySelectorAll(".steps").forEach(x=>x.classList.remove("active"));
  b.classList.add("active");document.getElementById(b.dataset.tab).classList.add("active");
 });
-if("serviceWorker" in navigator) navigator.serviceWorker.register("./sw.js").catch(()=>{});
+if("serviceWorker" in navigator) </script>
+
+<script>
+(function () {
+  if ('serviceWorker' in navigator) {
+    navigator.serviceWorker.getRegistrations().then(function(regs) {
+      regs.forEach(function(reg) { reg.unregister(); });
+    });
+  }
+  if ('caches' in window) {
+    caches.keys().then(function(keys) {
+      keys.forEach(function(key) { caches.delete(key); });
+    });
+  }
+})();
 </script>
+
 </body></html>
